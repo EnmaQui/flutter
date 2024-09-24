@@ -377,7 +377,7 @@ def flutter_parse_xcconfig_file(file)
   skip_line_start_symbols = ["#", "/"]
   File.foreach(file_abs_path) { |line|
     next if skip_line_start_symbols.any? { |symbol| line =~ /^\s*#{symbol}/ }
-    key_value_pair = line.split(pattern = '=')
+    key_value_pair = line.split(')
     if key_value_pair.length == 2
       entries[key_value_pair[0].strip()] = key_value_pair[1].strip();
     else
